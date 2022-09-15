@@ -58,3 +58,22 @@ body{
 .spacing-sm{
     height:5vh;
 }
+.x{
+    width:0vw;
+    height:100%;
+    background-color:#1f2041;
+    animation-name:expand;
+    animation-duration:1s;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes expand {
+    0%{
+        width:0vw;
+    }
+    100%{
+
+        width:100vw;
+    }
+}

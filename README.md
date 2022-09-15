@@ -40,5 +40,9 @@ Gosh that was way harder than I thought it'd be. There was so many elements with
 *Designed the timer html page* <br>
 After another two hours of trying to get the positioning right, I've finally finished my structure of my timer page. It consists of a timer and a stop button. I also added some animations as you enter the timer page.
 
+*Added timer functionality* <br>
+I remembered there were these things called classes in python, that were able to store multiple values and functions in them. After some research, I decided to use that as the brains behind the timer. I used the set interval function to pause in between seconds. Furthermore, I added functionality for the stop button, which allows users to stop the timer and return to the home screen. I reused my animation code from the start menu button.
+
+
 
 
