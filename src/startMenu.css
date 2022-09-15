@@ -1,0 +1,47 @@
+.body{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: auto;
+  max-width: 38rem;
+  padding: 2rem;
+  height:100vh;
+  background-color: #1f2041;
+}
+.body2{
+  height:100vh;
+  padding: 0;
+  background-color: #1f2041;
+}
+.border{
+  border: 2px solid black;
+  background-color: grey;
+}
+
+.spacing100{
+  height: 10vh;
+}
+.spacing50{
+  height: 5vh;
+}
+.audioHidden{
+  width:0;
+  height: 0;
+  opacity: 0;
+}
+.x{
+    width:0vw;
+    height:100%;
+    background-color:#59d2fe;
+    animation-name:expand;
+    animation-duration:5s;
+    
+}
+@keyframes expand {
+    0%{
+        width:0vw;
+    }
+    100%{
+
+        width:100vw;
+    }
+}
