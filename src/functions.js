@@ -3,7 +3,7 @@ function playMusic() {
 	window.electronAPI.sendMusicSignal();
 }
 function redirect(){
-    window.location.href = "music.html";
+    window.location.href = "timer.html";
 }
 function playStartSound() {
     console.log("test");

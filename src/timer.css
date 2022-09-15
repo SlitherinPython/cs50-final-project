@@ -1,0 +1,60 @@
+.timer{
+    background:blue;
+    width: 50vw;
+    height:35vh;
+    border-radius: 2%;
+    background: linear-gradient(to left, #3f9a97,#20659d);
+    box-shadow: 10px 10px 20px black;
+    animation-name: pop;
+    animation-fill-mode: forwards;
+    animation-duration:2s;
+}
+.stop-btn{
+    animation-name: appear;
+    animation-fill-mode: forwards;
+    animation-duration:4s;
+}
+@keyframes appear {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes pop {
+    0%{
+        width:50vw;
+    }
+    50%{ 
+        width:60vw;
+    }
+    100%{
+        width:50vw;
+    }
+}
+body{
+    background:#C9E265;
+    height:100vh;
+}
+
+.timerText{
+
+    font-size:1000%;
+}
+
+.outertimer{
+    margin-left:0;
+    margin-right:0;
+}
+
+.outerstop{
+    margin-left:0;
+    margin-right:0;
+}
+.spacing{
+    height:25vh;
+}
+.spacing-sm{
+    height:5vh;
+}

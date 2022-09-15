@@ -44,9 +44,10 @@ img{
 .x{
     width:0vw;
     height:100%;
-    background-color:#59d2fe;
+    background-color:#C9E265;
     animation-name:expand;
     animation-duration:5s;
+    animation-fill-mode: forwards;
     
 }
 @keyframes expand {

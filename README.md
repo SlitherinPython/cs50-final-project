@@ -34,4 +34,11 @@ After getting a nice looking logo from some logo designing website, I did a litt
 *Added it to a git repository* <br>
 After almost breaking everything after switching a few files over to new folders for organisation purposes, I decided to finally put my git skills learned in the git seminar to use. I created a private git repository and pushed all my code.
 
-*Started designing the settings menu* <br>
+*Added settings logo to start menu* <br>
+Gosh that was way harder than I thought it'd be. There was so many elements with weird margins and paddings that I had to remove. The positioning was not too bad but required a few workarounds.
+
+*Designed the timer html page* <br>
+After another two hours of trying to get the positioning right, I've finally finished my structure of my timer page. It consists of a timer and a stop button. I also added some animations as you enter the timer page.
+
+
+
