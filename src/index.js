@@ -14,18 +14,21 @@ const menuItems = [
 						show: false,
 						// This means the window isn't going to show by default
 					});
-          const url = "https://soundcloud.com/djdropg/summer-special-super-mix-2018-best-of-deep-house-sessions-music-2018-chill-out-mix-by-drop-g?si=fa3057fc8e294420aa503ab1dec2bdca&#t=5%3A00%3A00";
+					const url =
+						"https://soundcloud.com/djdropg/summer-special-super-mix-2018-best-of-deep-house-sessions-music-2018-chill-out-mix-by-drop-g?si=fa3057fc8e294420aa503ab1dec2bdca&#t=5%3A00%3A00";
 					soundcloudWindow.loadURL(url);
 					soundcloudWindow.once("ready-to-show", async () => {
 						await console.log("Music should start playing now. ");
-            const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-            await delay(10000);
+						const delay = (ms) =>
+							new Promise((resolve) => setTimeout(resolve, ms));
+						await delay(10000);
 
-            await soundcloudWindow.close();
-            await console.log("Window is now closed. ");
+						await soundcloudWindow.close();
+						await console.log("Window is now closed. ");
 					});
 				},
 			},
+			{ role: "toggleDevTools" },
 		],
 	},
 ];
@@ -61,16 +64,18 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 1920,
     height: 1080,
+    show: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
+      devTools: false
     },
   });
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'startMenu.html'));
 
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  mainWindow.maximize();
+  mainWindow.show();
 };
 
 // This method will be called when Electron has finished
