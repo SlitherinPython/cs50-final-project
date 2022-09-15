@@ -67,13 +67,14 @@ const createWindow = () => {
     show: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      devTools: false
     },
   });
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'startMenu.html'));
-
+  devtools = new BrowserWindow();
+  mainWindow.webContents.setDevToolsWebContents(devtools.webContents);
+  mainWindow.webContents.openDevTools({ mode: "detach" });
   mainWindow.maximize();
   mainWindow.show();
 };
