@@ -1,37 +1,49 @@
 const { app, BrowserWindow, Menu, ipcMain} = require('electron');
 const path = require('path');
+function playMusicFuncInMain(event){
+    const soundcloudWindow = new BrowserWindow({
+      height: 1080,
+      width: 1920,
+      show: true,
+      // This means the window isn't going to show by default
+    });
+    const url = "https://soundcloud.com/djdropg/summer-special-super-mix-2018-best-of-deep-house-sessions-music-2018-chill-out-mix-by-drop-g?si=fa3057fc8e294420aa503ab1dec2bdca&#t=0%3A00%3A01";
+    
+    soundcloudWindow.loadURL(url);
+    code_to_mute = `window.mute()`;
+    soundcloudWindow.webContents.executeJavaScript(code_to_mute);
+    soundcloudWindow.once("ready-to-show", async () => {
+    soundcloudWindow.webContents.setAudioMuted(false);
+    soundcloudWindow.show();
+    // await soundcloudWindow.webContents.setAudioMuted(true);
 
+    console.log("Music should start playing now. ");
+    const code_to_pause = `pause = document.querySelector('a[title="Pause"][tabindex="0"]');
+    pause.click()`;
+    
+    
+    soundcloudWindow.webContents.executeJavaScript(code_to_pause);
+    // const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+    // await delay(10000);
+
+    // await soundcloudWindow.close();
+    // await console.log("Window is now closed. ");
+  });
+}
 const menuItems = [
 	{
 		label: "Window",
 		submenu: [
 			{
 				label: "Music at 5 hours",
-				click: () => {
-					const soundcloudWindow = new BrowserWindow({
-						height: 1,
-						width: 1,
-						show: false,
-						// This means the window isn't going to show by default
-					});
-					const url =
-						"https://soundcloud.com/djdropg/summer-special-super-mix-2018-best-of-deep-house-sessions-music-2018-chill-out-mix-by-drop-g?si=fa3057fc8e294420aa503ab1dec2bdca&#t=5%3A00%3A00";
-					soundcloudWindow.loadURL(url);
-					soundcloudWindow.once("ready-to-show", async () => {
-						await console.log("Music should start playing now. ");
-						const delay = (ms) =>
-							new Promise((resolve) => setTimeout(resolve, ms));
-						await delay(10000);
+				click: playMusicFuncInMain
 
-						await soundcloudWindow.close();
-						await console.log("Window is now closed. ");
-					});
-				},
 			},
-			{ role: "toggleDevTools" },
-		],
+      {role: "toggleDevTools"},
+    ]
 	},
 ];
+
 const menu = Menu.buildFromTemplate(menuItems);
 Menu.setApplicationMenu(menu);
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -39,24 +51,7 @@ Menu.setApplicationMenu(menu);
 if (require('electron-squirrel-startup')) {
   app.quit();
 }
-function playMusicFuncInMain(event){
-    const soundcloudWindow = new BrowserWindow({
-      height: 1,
-      width: 1,
-      show: false,
-      // This means the window isn't going to show by default
-    });
-    const url = "https://soundcloud.com/djdropg/summer-special-super-mix-2018-best-of-deep-house-sessions-music-2018-chill-out-mix-by-drop-g?si=fa3057fc8e294420aa503ab1dec2bdca&#t=0%3A00%3A01";
-    soundcloudWindow.loadURL(url);
-    soundcloudWindow.once("ready-to-show", async () => {
-    await console.log("Music should start playing now. ");
-    const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-    await delay(10000);
 
-    await soundcloudWindow.close();
-    await console.log("Window is now closed. ");
-  });
-}
 const createWindow = () => {
   
   ipcMain.on('play-music', playMusicFuncInMain);
@@ -72,9 +67,6 @@ const createWindow = () => {
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'startMenu.html'));
-  devtools = new BrowserWindow();
-  mainWindow.webContents.setDevToolsWebContents(devtools.webContents);
-  mainWindow.webContents.openDevTools({ mode: "detach" });
   mainWindow.maximize();
   mainWindow.show();
 };

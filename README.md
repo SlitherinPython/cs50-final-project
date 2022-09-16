@@ -43,6 +43,11 @@ After another two hours of trying to get the positioning right, I've finally fin
 *Added timer functionality* <br>
 I remembered there were these things called classes in python, that were able to store multiple values and functions in them. After some research, I decided to use that as the brains behind the timer. I used the set interval function to pause in between seconds. Furthermore, I added functionality for the stop button, which allows users to stop the timer and return to the home screen. I reused my animation code from the start menu button.
 
+**Day 4:**
+
+*Semi-fixed the music problem* <br>
+The main reason why the music took so long to load was the rendering time. So I thought if I could prerender it before the timer runs out, it could play without any delay. After some more research, I found out that javascript could click a tags, which just so happened to be the play/pause button of the soundcloud website. So after a bit of coding, I managed to prerender it and pause it (so that I could press play whenever I want to and play the music without delay). However, there was still a delay between the website rendering and my code pausing the music so the user could still hear about 5 seconds of the music playing as my app prerendered the music. My solution would be to mute the window as it prerenders and unmute it after I've paused the music. However, all the functions provided by electron didn't seem to work. 
+
 
 
 
