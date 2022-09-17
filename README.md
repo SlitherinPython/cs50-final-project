@@ -5,6 +5,17 @@
 
 #### Description: A desktop application made for windows, macOS, and Linux (electron) that reminds users to take a break from staring at their PC screens after a certain amount of time.
 
+Installation instructions: <br>
+```
+git clone https://github.com/SlitherinPython/cs50-final-project
+npm install eslint
+```
+
+**To Run:** <br>
+`npm start`
+
+
+
 Making a desktop programme that could operate on several operating systems is my aim for this project. I was really motivated to create a programme that would help computer users with a particular issue. After wasting hours looking for inspiration online, I came to understand the true issue that many of us confront. Control. After a long programming session, we frequently look up at a clock and realise that we just spent our entire afternoon fixing this bug. Time easily passes while we stare lifelessly at a screen of pixels. I set out to come up with solutions with the intention of solving this issue. How could I create a kind of alert to remind the user to take a break after a certain amount of time while still making it delightful and interesting for them? My initial thinking was to use the knowledge I gained from CS50 to do this. Simply said, I could create a website that visitors could access. But I felt it was a little too easy and not difficult enough.
 
 I then examined desktop programmes. Spotify, Vscode, and Discord. I use all these apps every day without thinking about them. How can I create these? I was clueless. I began to conduct some research online and learned they were typically built with C++ or C#. I searched the internet for further information because I didn't feel like learning entirely new languages just for CS50's final assignment. And it was at that point when I discovered Electron. It stated that I could develop desktop programmes using html, CSS, and javascript. Woah! I got to work right away.
