@@ -53,13 +53,13 @@ The main reason why the music took so long to load was the rendering time. So I 
 *Music function fixed* <br>
 Phew! That was crazy. After a ton of tinkering with the audio function and even the chromium command line, I went back to my original code and because of a small change (me setting the browserwindow object to a global object) it just started working! I have no clue why that happened but yeah I've finally fixed that.
 
-*Fixed an issue where music would still continue playing even after main window is closed*
+*Fixed an issue where music would still continue playing even after main window is closed* <br>
 Because the soundcloud window was hidden, when we closed the main window, electron would still think that it was still active. I added an event listener to when the main window was closed and when the event happened close the soundcloud window as well. 
 
-*Made the music.html file*
+*Made the music.html file* <br>
 I took a wave animation from codepen and added a timer using the setInterval function as before. Then I looped it back to timer.html when it was done, and made timer.html loop back to it when it was done. 
 
-- Music file 
-- Edit timer file so that when it reaches zero, plays the animation and switches to music file
+*Added transitions* <br>
+I added transitions using the past methods and a new css library. Audio in between transitions is still pending.
 - Settings file (Demo mode, colours)
 

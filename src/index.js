@@ -14,6 +14,7 @@ const menuItems = [
         click: stopMusicFuncInMain
       },
       {role: "toggleDevTools"},
+	  {role: "reload"}
     ]
 	},
 ];

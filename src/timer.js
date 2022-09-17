@@ -54,7 +54,7 @@ function sleep(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-var p = new Time(0, 10);
+var p = new Time(0, 1);
 
 document.getElementById("timer-text").innerHTML = p.print_time();
 function minus_one_sec_in_timer() {
@@ -64,7 +64,16 @@ function minus_one_sec_in_timer() {
 	timer_text.innerHTML = result;
 
 	if (minus_result == "X") {
-		window.location.href = "music.html";
+		document.getElementById("outer").remove();
+		var tag = document.createElement("div");
+		var element = document.getElementById("body");
+		tag.classList.add("takeup");
+		tag.classList.add("animate__animated");
+		tag.classList.add("animate__fadeInDown");
+		
+		element.appendChild(tag);
+		setTimeout(() => {window.location.href = "music.html";}, 1000);
+		
 	}
 }
 setInterval(minus_one_sec_in_timer, 1000);
