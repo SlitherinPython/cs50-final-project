@@ -48,6 +48,11 @@ I remembered there were these things called classes in python, that were able to
 *Semi-fixed the music problem* <br>
 The main reason why the music took so long to load was the rendering time. So I thought if I could prerender it before the timer runs out, it could play without any delay. After some more research, I found out that javascript could click a tags, which just so happened to be the play/pause button of the soundcloud website. So after a bit of coding, I managed to prerender it and pause it (so that I could press play whenever I want to and play the music without delay). However, there was still a delay between the website rendering and my code pausing the music so the user could still hear about 5 seconds of the music playing as my app prerendered the music. My solution would be to mute the window as it prerenders and unmute it after I've paused the music. However, all the functions provided by electron didn't seem to work. 
 
+**Day 5:**
+
+*Music function fixed* <br>
+Phew! That was crazy. After a ton of tinkering with the audio function and even the chromium command line, I went back to my original code and because of a small change (me setting the browserwindow object to a global object) it just started working! I have no clue why that happened but yeah I've finally fixed that.
+
 
 
 
