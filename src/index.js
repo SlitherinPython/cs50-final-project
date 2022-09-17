@@ -1,7 +1,7 @@
 const { app, BrowserWindow, Menu, ipcMain} = require('electron');
 const path = require('path');
 
-
+var mainWindow;
 const menuItems = [
 	{
 		label: "Window",
@@ -17,12 +17,26 @@ const menuItems = [
     ]
 	},
 ];
+// Adapted from https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript
+
+function randomIntFromInterval(min, max) {
+	var tmp = Math.floor(Math.random() * (max - min + 1) + min);
+	tmp = tmp.toString();
+	if (tmp.length < 2){
+		tmp = '0' + tmp;
+	}
+	return tmp;
+}
+
 function playMusicFuncInMain(){	
   soundcloudWindow.webContents.audioMuted = false;
 	console.log("Music should start playing now");
+
 	code_to_play = `play = document.querySelector('a[title="Play"][tabindex="0"]')
-	play.click()`;
-  soundcloudWindow.webContents.executeJavaScript(code_to_play);
+play.click()`;
+	soundcloudWindow.webContents.executeJavaScript(code_to_play);
+
+	
 }
 
 function stopMusicFuncInMain(){
@@ -40,7 +54,8 @@ if (require('electron-squirrel-startup')) {
 }
 
 const createWindow = () => {
-	// ipcMain.on('play-music', playMusicFuncInMain);
+	ipcMain.on('play-music', playMusicFuncInMain);
+	ipcMain.on('stop-music', stopMusicFuncInMain);
 	const mainWindow = new BrowserWindow({
 	  width: 1920,
 	  height: 1080,
@@ -49,7 +64,9 @@ const createWindow = () => {
 	    preload: path.join(__dirname, 'preload.js'),
 	  },
 	});
-
+	mainWindow.on("closed", () => {
+		soundcloudWindow.close();
+	});
 
 	mainWindow.loadFile(path.join(__dirname, 'startMenu.html'));
 	mainWindow.maximize();
@@ -58,22 +75,25 @@ const createWindow = () => {
   globalThis.soundcloudWindow = new BrowserWindow({
 		height: 1080,
 		width: 1920,
-		show: false,
+		show: true,
 	});
+	var seconds = randomIntFromInterval(1, 59);
+	var minutes = randomIntFromInterval(1, 59);
+	var hours = randomIntFromInterval(0, 5)[0];
+
 	const url =
-		"https://soundcloud.com/djdropg/summer-special-super-mix-2018-best-of-deep-house-sessions-music-2018-chill-out-mix-by-drop-g?si=fa3057fc8e294420aa503ab1dec2bdca&#t=0%3A22%3A01";
+		`https://soundcloud.com/djdropg/summer-special-super-mix-2018-best-of-deep-house-sessions-music-2018-chill-out-mix-by-drop-g?si=fa3057fc8e294420aa503ab1dec2bdca&#t=${hours}%3A${minutes}%3A${seconds}`;
 
 	soundcloudWindow.loadURL(url);
 	soundcloudWindow.webContents.audioMuted = true;
-	soundcloudWindow.once("ready-to-show", async () => {
-		const code_to_pause = `pause = document.querySelector('a[title="Pause"][tabindex="0"]');
-    pause.click()`;
-		soundcloudWindow.webContents.executeJavaScript(code_to_pause);
-	});
-  console.log("Prerender for music done.")
-};
+	const code_to_pause = `pause = document.querySelector('a[title="Pause"][tabindex="0"]');
+pause.click()`;
+
+	soundcloudWindow.webContents.executeJavaScript(code_to_pause);
+}
 
 app.on('ready', createWindow);
+
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();

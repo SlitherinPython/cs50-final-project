@@ -54,7 +54,7 @@ function sleep(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-var p = new Time(30, 0);
+var p = new Time(0, 10);
 
 document.getElementById("timer-text").innerHTML = p.print_time();
 function minus_one_sec_in_timer() {
@@ -64,7 +64,7 @@ function minus_one_sec_in_timer() {
 	timer_text.innerHTML = result;
 
 	if (minus_result == "X") {
-		clearInterval();
+		window.location.href = "music.html";
 	}
 }
 setInterval(minus_one_sec_in_timer, 1000);

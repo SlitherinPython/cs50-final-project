@@ -1,7 +1,5 @@
 var audio = new Audio("../assets/startSound.mp3");
-function playMusic() {
-	window.electronAPI.sendMusicSignal();
-}
+
 function redirect(){
     window.location.href = "timer.html";
 }
