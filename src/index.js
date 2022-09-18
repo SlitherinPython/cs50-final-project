@@ -76,7 +76,7 @@ const createWindow = () => {
   globalThis.soundcloudWindow = new BrowserWindow({
 		height: 1080,
 		width: 1920,
-		show: true,
+		show: false,
 	});
 	var seconds = randomIntFromInterval(1, 59);
 	var minutes = randomIntFromInterval(1, 59);

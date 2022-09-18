@@ -81,3 +81,7 @@ body {
     opacity: 1;
   }
 }
+
+.animate__animated.animate__fadeInDown{
+    --animate-duration:6s;
+}

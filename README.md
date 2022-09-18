@@ -72,5 +72,11 @@ I took a wave animation from codepen and added a timer using the setInterval fun
 
 *Added transitions* <br>
 I added transitions using the past methods and a new css library. Audio in between transitions is still pending.
-- Settings file (Demo mode, colours)
+
+**Day 6:**
+
+*Added audio between timer/music transitions*
+I looked for a few suitable sound effects online and added the appropriate delays for the music to play properly between transitions.
+
+- Settings file (Demo mode, colours, immediately start timer)
 

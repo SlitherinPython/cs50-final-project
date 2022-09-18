@@ -85,3 +85,7 @@ body{
     margin:0;
     background:rgb(28, 181, 192);
 }
+
+.animate__animated.animate__fadeInDown{
+    --animate-duration:4s;
+}

@@ -1,4 +1,5 @@
 var audio = new Audio("../assets/timerbacktostartmenu.mp3");
+var audio2 = new Audio("../assets/timertomusic.mp3");
 class Time {
 	constructor(minutes, seconds) {
 		if (seconds > 59) {
@@ -72,7 +73,8 @@ function minus_one_sec_in_timer() {
 		tag.classList.add("animate__fadeInDown");
 		
 		element.appendChild(tag);
-		setTimeout(() => {window.location.href = "music.html";}, 1000);
+		audio2.play()
+		setTimeout(() => {window.location.href = "music.html";}, 5000);
 		
 	}
 }
