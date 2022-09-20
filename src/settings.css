@@ -14,3 +14,13 @@ body{
     border-radius: 10px;
     width:50vw;
 }
+
+.settingsnav{
+  background-color:transparent !important;
+}
+
+.settingsLogo{
+  width:20%;
+  padding-top:1vh;
+  padding-left:1vw;
+}

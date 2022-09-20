@@ -78,5 +78,11 @@ I added transitions using the past methods and a new css library. Audio in betwe
 *Added audio between timer/music transitions*
 I looked for a few suitable sound effects online and added the appropriate delays for the music to play properly between transitions.
 
+**Day 7:**
 
+*I added a settings page*
+I created a settings logo in the start menu early on in the project and I finally got to working on it. I used a bootstrap and some simple html.
+
+*Added settings functionality (doesn't include using the settings chosen by user yet)* 
+I used a json file to store the user preferences and linked the renderer file to the main process (which basically means I get to access the file system and therefore allow me to edit config.json with just javascript). Now, I can get the json file in the renderer process and edit the json file in the renderer process. This'll allow me to render the user's previous settings and implement their new settings when they save their changes. 
 

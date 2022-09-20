@@ -1,5 +1,6 @@
 const { app, BrowserWindow, Menu, ipcMain} = require('electron');
 const path = require('path');
+const fs = require('fs');
 
 var mainWindow;
 const menuItems = [
@@ -18,10 +19,16 @@ const menuItems = [
     ]
 	},
 ];
-// Adapted from https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript
-function editSetting(setting, value){
-	console.log(`Edit setting: ${setting}-${value}`);
+
+function editSetting(event, setting, value){
+	const file_name = "src/config.json"
+	var file_content = fs.readFileSync(file_name);
+	var content = JSON.parse(file_content);
+	
+	content[setting] = value;
+	fs.writeFileSync(file_name, JSON.stringify(content));
 }
+// Adapted from https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript
 function randomIntFromInterval(min, max) {
 	var tmp = Math.floor(Math.random() * (max - min + 1) + min);
 	tmp = tmp.toString();
@@ -55,12 +62,19 @@ Menu.setApplicationMenu(menu);
 if (require('electron-squirrel-startup')) {
   app.quit();
 }
-
+var mainWindow;
+function sendJson(){
+	const file_name = "src/config.json";
+	var file_content = fs.readFileSync(file_name);
+	var content = JSON.parse(file_content);
+	mainWindow.webContents.send('heres-json', content);
+}
 const createWindow = () => {
 	ipcMain.on('edit-setting', editSetting);
 	ipcMain.on('play-music', playMusicFuncInMain);
 	ipcMain.on('stop-music', stopMusicFuncInMain);
-	const mainWindow = new BrowserWindow({
+	ipcMain.on('send-me-json', sendJson);
+	mainWindow = new BrowserWindow({
 	  width: 1920,
 	  height: 1080,
 	  show: false,

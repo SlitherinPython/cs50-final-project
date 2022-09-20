@@ -8,6 +8,11 @@
     <title>Chill - Settings</title>
 </head>
 <body class="mx-auto align-items-center">
+    <nav class="navbar container-fluid p-0 settingsnav d-flex justify-content-start" id="navbar">
+        <a class="navbar-brand settingsnav m-0 p-0 d-flex justify-content-start" href="startMenu.html">
+            <img src="../assets/settingsbacktomain.png" alt="" class="settingsLogo">
+        </a>
+    </nav>
     <div class="spacing50"></div>
     <!-- Settings page inspired by https://www.designcrowd.com/design/16136588 -->
     <div class="row container-fluid">
@@ -27,25 +32,15 @@
                     <input type="checkbox" id="demoMode">
                     <label for="demoMode"  data-toggle="tooltip" data-placement="bottom" title="Turn on to reduce timer and rest duration to test functionality of application.">Demo mode</label>
                 </div>
-                <div class="form-group">
-                    <input type="checkbox" id="demoMode">
-                    <label for="demoMode" min="10" max="120" data-toggle="tooltip" data-placement="bottom"
-                        title="Makes the timer start immediately the next time you load the application and skips over the start menu.">Start
-                        immediately</label>
-                </div>
                 <br>
                 <div class="form-group">
                     <label for="timerDuration"  data-toggle="tooltip" data-placement="bottom" title="Custom setting to customize the duration of the countdown timer in minutes. Only available when demo mode is turned off.">Duration of timer (minutes)</label>
-                    <input type="number" min="10" max="120" class="form-control" id="timerDuration" value="30">
+                    <input onKeyDown="return false" type="number" min="10" max="120" class="form-control" id="timerDuration" value="30">
                 </div>
                 <div class="form-group">
                     <label for="restDuration"  data-toggle="tooltip" data-placement="bottom" title="Custom setting to customize the duration of the timer when resting in minutes. Only available when demo mode is turned off.">Duration of rest (seconds)</label>
-                    <input type="number" class="form-control" id="restDuration" value="30">
+                    <input onKeyDown="return false" type="number" class="form-control" id="restDuration" value="30">
 
-
-                <br>
-                <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         <script src="settings.js"></script>
     <!-- 
