@@ -3,12 +3,57 @@
 <head>
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor' crossorigin='anonymous'>
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js' integrity='sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2' crossorigin='anonymous'></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="settings.css">
     <title>Chill - Settings</title>
 </head>
-<body>
+<body class="mx-auto align-items-center">
+    <div class="spacing50"></div>
+    <!-- Settings page inspired by https://www.designcrowd.com/design/16136588 -->
+    <div class="row container-fluid">
+        <div class="col text-center">
+            <h1 class="maintext">My settings</h1>
+        </div>
+    </div>
+    <div class="spacing50"></div>
+    <div class="spacing50"></div>
+    <div class="spacing50"></div>
+    <div class="container d-flex justify-content-center">
+        <div class="jumbotron settingsContainer">
+            <p class="lead">Hover above any setting to get more information.</p>
+            <hr class="my-4">
+            <form>
+                <div class="form-group">
+                    <input type="checkbox" id="demoMode">
+                    <label for="demoMode"  data-toggle="tooltip" data-placement="bottom" title="Turn on to reduce timer and rest duration to test functionality of application.">Demo mode</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="demoMode">
+                    <label for="demoMode" min="10" max="120" data-toggle="tooltip" data-placement="bottom"
+                        title="Makes the timer start immediately the next time you load the application and skips over the start menu.">Start
+                        immediately</label>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="timerDuration"  data-toggle="tooltip" data-placement="bottom" title="Custom setting to customize the duration of the countdown timer in minutes. Only available when demo mode is turned off.">Duration of timer (minutes)</label>
+                    <input type="number" min="10" max="120" class="form-control" id="timerDuration" value="30">
+                </div>
+                <div class="form-group">
+                    <label for="restDuration"  data-toggle="tooltip" data-placement="bottom" title="Custom setting to customize the duration of the timer when resting in minutes. Only available when demo mode is turned off.">Duration of rest (seconds)</label>
+                    <input type="number" class="form-control" id="restDuration" value="30">
+
+
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        <script src="settings.js"></script>
     <!-- 
         Things to customize in settings:
-            - Duration of timer
+            - Duration of timer, Duration of rest
+            - Demo mode
+            - immediately start timer
+
      -->
 </body>
 </html>

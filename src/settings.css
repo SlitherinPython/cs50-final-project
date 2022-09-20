@@ -1,0 +1,16 @@
+body{
+    background-color:#1f2041;
+}
+.maintext{
+    color:white;
+}
+
+.spacing50{
+    height:5vh;
+}
+.settingsContainer{
+    background-color:white;
+    padding:5%;
+    border-radius: 10px;
+    width:50vw;
+}

@@ -78,5 +78,5 @@ I added transitions using the past methods and a new css library. Audio in betwe
 *Added audio between timer/music transitions*
 I looked for a few suitable sound effects online and added the appropriate delays for the music to play properly between transitions.
 
-- Settings file (Demo mode, colours, immediately start timer)
+
 

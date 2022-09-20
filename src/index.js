@@ -19,7 +19,9 @@ const menuItems = [
 	},
 ];
 // Adapted from https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript
-
+function editSetting(setting, value){
+	console.log(`Edit setting: ${setting}-${value}`);
+}
 function randomIntFromInterval(min, max) {
 	var tmp = Math.floor(Math.random() * (max - min + 1) + min);
 	tmp = tmp.toString();
@@ -55,6 +57,7 @@ if (require('electron-squirrel-startup')) {
 }
 
 const createWindow = () => {
+	ipcMain.on('edit-setting', editSetting);
 	ipcMain.on('play-music', playMusicFuncInMain);
 	ipcMain.on('stop-music', stopMusicFuncInMain);
 	const mainWindow = new BrowserWindow({
