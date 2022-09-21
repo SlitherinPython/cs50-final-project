@@ -20,6 +20,9 @@ function switchDemoMode() {
     
     console.log(settings);
 }
+
+
+
 function updateTimerDuration() {
     settings.timerDuration = parseInt(timerDuration.value, 10);
     console.log(settings);
@@ -39,6 +42,7 @@ function saveSettings(){
     window.electronAPI.editSetting("demoMode", settings.demoMode);
     window.electronAPI.editSetting("timerDuration", settings.timerDuration);
     window.electronAPI.editSetting("restDuration", settings.restDuration);
+    window.location.href = "startMenu.html";    
 }
 demoMode.addEventListener("click", switchDemoMode);
 timerDuration.addEventListener("input", updateTimerDuration);

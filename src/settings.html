@@ -8,11 +8,6 @@
     <title>Chill - Settings</title>
 </head>
 <body class="mx-auto align-items-center">
-    <nav class="navbar container-fluid p-0 settingsnav d-flex justify-content-start" id="navbar">
-        <a class="navbar-brand settingsnav m-0 p-0 d-flex justify-content-start" href="startMenu.html">
-            <img src="../assets/settingsbacktomain.png" alt="" class="settingsLogo">
-        </a>
-    </nav>
     <div class="spacing50"></div>
     <!-- Settings page inspired by https://www.designcrowd.com/design/16136588 -->
     <div class="row container-fluid">
@@ -25,8 +20,6 @@
     <div class="spacing50"></div>
     <div class="container d-flex justify-content-center">
         <div class="jumbotron settingsContainer">
-            
-            <form>
                 <div class="form-group">
                     
                     <label for="demoMode" class="inline">TESTING MODE (When turned on, screen uptime and downtime are automatically set for testing purposes, user settings will not be applicable. Disable TESTING MODE to input settings. )</label>
@@ -41,8 +34,7 @@
                     <label for="restDuration">Duration of screen downtime: (seconds)</label>
                     <input min="1" type="number" class="form-control" id="restDuration" value="30">
                 <br>
-                <button class="btn btn-primary" onclick="saveSettings()">Save settings</button>
-            </form>
+                <button class="btn btn-primary" onclick="saveSettings()">Save and Exit</button>
         <script src="settings.js"></script>
 </body>
 </html>
