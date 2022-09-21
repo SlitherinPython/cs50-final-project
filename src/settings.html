@@ -25,22 +25,23 @@
     <div class="spacing50"></div>
     <div class="container d-flex justify-content-center">
         <div class="jumbotron settingsContainer">
-            <p class="lead">Hover above any setting to get more information.</p>
-            <hr class="my-4">
+            
             <form>
                 <div class="form-group">
+                    
+                    <label for="demoMode" class="inline">TESTING MODE (When turned on, screen uptime and downtime are automatically set for testing purposes, user settings will not be applicable. Disable TESTING MODE to input settings. )</label>
                     <input type="checkbox" id="demoMode">
-                    <label for="demoMode"  data-toggle="tooltip" data-placement="bottom" title="Turn on to reduce timer and rest duration to test functionality of application.">Demo mode</label>
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="timerDuration"  data-toggle="tooltip" data-placement="bottom" title="Custom setting to customize the duration of the countdown timer in minutes. Only available when demo mode is turned off.">Duration of timer (minutes)</label>
-                    <input onKeyDown="return false" type="number" min="10" max="120" class="form-control" id="timerDuration" value="30">
+                    <label for="timerDuration">Input duration before screen downtime kicks in: (minutes) </label>
+                    <input type="number" min="1" class="form-control" id="timerDuration" value="30">
                 </div>
                 <div class="form-group">
-                    <label for="restDuration"  data-toggle="tooltip" data-placement="bottom" title="Custom setting to customize the duration of the timer when resting in minutes. Only available when demo mode is turned off.">Duration of rest (seconds)</label>
-                    <input onKeyDown="return false" type="number" class="form-control" id="restDuration" value="30">
-
+                    <label for="restDuration">Duration of screen downtime: (seconds)</label>
+                    <input min="1" type="number" class="form-control" id="restDuration" value="30">
+                <br>
+                <button class="btn btn-primary" onclick="saveSettings()">Save settings</button>
             </form>
         <script src="settings.js"></script>
     <!-- 

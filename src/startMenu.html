@@ -11,36 +11,65 @@
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js'
       integrity='sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2'
       crossorigin='anonymous'></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
   </head>
 
   <body class="body" id="body">
-    <nav class="navbar container-fluid p-0 settingsnav d-flex justify-content-end" id="navbar">
-        <a class="navbar-brand settingsnav m-0 p-0 d-flex justify-content-end" href="settings.html">
-          <img src="../assets/settingLogo.png" alt="" class="settingsLogo">
-        </a>
+    <div class="row spacing25 m-0" id="toRemove1"></div>
+
+    <nav class="navbar container-fluid p-0 settingsnav d-flex justify-content-center" id="navbar">
+        <div class="outerYellow text-center d-flex align-items-center justify-content-center">
+          <h1 class="desc">
+          "Chill" helps you take breaks from screen time, with added bonus - Music!
+          </h1>
+        </div>
     </nav>
-    <div id="outer">
-      <script src="functions.js"></script>
+      <div class="container-fluid" id="outer">
+        <script src="functions.js"></script>
+        <div class="row">
+          
+          <div class="col-md-6 d-flex justify-content-center">
 
-
+            <div class="row">
+              <div class="spacing50"></div>
+              <div class="col-md-12">
+                  <div class="col container mainlogo col-md-12 d-flex justify-content-center">
+                    <img src="../assets/logo.png" class="img-fluid mainlogo">
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="spacing100"></div>
+            <div class="spacing100"></div>
+            
+            <div class="row">
+              <div class="col-md-12">
+                <div class="col container mainstart col-md-8 d-flex justify-content-center">
+                  <a href="settings.html">
+                  <img src="../assets/settingLogo.png" alt="start button" class="img-fluid mainstart" onclick="playStartSound()">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="spacing100"></div>
+            
+            <div class="row">
+              <div class="col-md-12">
+                <div class="col container mainstart col-md-8 d-flex justify-content-center">
+                  
+                  <img src="../assets/startmenubutton.png" alt="start button" class="img-fluid mainstart" onclick="playStartSound()">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       
-      <div class="row spacing50 m-0"></div>
-
-      <div class="row m-0 d-flex justify-content-center">
-        <div class="col container mainlogo col-md-6 d-flex justify-content-center">
-          <img src="../assets/logo.png" class="img-fluid mainlogo">
-        </div>
-      </div>
-      <div class="row spacing100 m-0"></div>
-      <div class="row m-0 d-flex justify-content-center">
-        <div class="col container mainstart col-md-8 d-flex justify-content-center">
-          <img src="../assets/startmenubutton.png" alt="start button" class="img-fluid mainstart" onclick="playStartSound()">
-        </div>
-      </div>
-
-      <!-- Start button -->
-      <!-- Settings (Top right corner) -->
-
+      <div class="row spacing50 m-0" id="toRemove2"></div>
     </div>
   </body>
 

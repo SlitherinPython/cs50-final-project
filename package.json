@@ -24,7 +24,11 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "cs50_final_project"
+            "name": "cs50_final_project",
+            "forge": {
+                "electronPackagerConfig": {
+                "dir": "."}
+            }
           }
         },
         {

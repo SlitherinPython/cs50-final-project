@@ -7,61 +7,38 @@ window.electronAPI.onHeresJson((_event, content) => {
 	timerDuration.value = settings.timerDuration;
 	restDuration.value = settings.restDuration;
 	if (settings.demoMode) {
-        window.electronAPI.editSetting('demoMode', false);
         settings.demoMode = false;
 		demoMode.click();
 	}
 });
 
-var disabledOthers = false;
-function switchDemoMode() {
-	document.getElementById("timerDuration").disabled = !disabledOthers;
-	document.getElementById("restDuration").disabled = !disabledOthers;
-	disabledOthers = !disabledOthers;
 
-	window.electronAPI.editSetting("demoMode", !settings.demoMode);
-    settings.demoMode = !settings.demoMode;
+function switchDemoMode() {
+	document.getElementById("timerDuration").disabled = demoMode.checked;
+	document.getElementById("restDuration").disabled = demoMode.checked;
+    settings.demoMode = demoMode.checked;
+    
+    console.log(settings);
 }
 function updateTimerDuration() {
-    if (timerDuration.value == null) {
-        timerDuration.value = 30;
-    }
-    var curr_val = parseInt(timerDuration.value, 10);
-    
-    if (curr_val > 120){
-        curr_val = 120;
-        timerDuration.value = 120;
-    }
-    else if (curr_val < 10){
-        curr_val = 10;
-        timerDuration.value = 10;
-    }
-    
-    
-	window.electronAPI.editSetting(
-		"timerDuration",
-		curr_val
-	);
-    settings.timerDuration = curr_val;
+    settings.timerDuration = parseInt(timerDuration.value, 10);
+    console.log(settings);
 }
 function updateRestDuration() {
-    if (restDuration.value == null){
-        restDuration.value = 30;
-    }
-    var curr_val = parseInt(restDuration.value, 10);
-    if (curr_val > 120){
-        curr_val = 120;
-        restDuration.value = 120;
-    }
-    else if (curr_val < 10){
-        curr_val = 10;
-        restDuration.value = 10;
-    }
-	window.electronAPI.editSetting(
-		"restDuration",
-		curr_val
-	);
     settings.restDuration = parseInt(restDuration.value, 10);
+    console.log(settings);
+}
+function saveSettings(){
+    if (settings.timerDuration == null || settings.timerDuration < 1){
+        settings.timerDuration = 30;
+    }
+    if (settings.restDuration == null || settings.restDuration < 1){
+        settings.restDuration = 30;
+    }
+
+    window.electronAPI.editSetting("demoMode", settings.demoMode);
+    window.electronAPI.editSetting("timerDuration", settings.timerDuration);
+    window.electronAPI.editSetting("restDuration", settings.restDuration);
 }
 demoMode.addEventListener("click", switchDemoMode);
 timerDuration.addEventListener("input", updateTimerDuration);

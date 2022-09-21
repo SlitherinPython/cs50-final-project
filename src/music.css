@@ -60,6 +60,7 @@ body {
 
 .countdown{
     font-size: 15em;
+    display:block;
 }
 
 .takeup{
@@ -84,4 +85,14 @@ body {
 
 .animate__animated.animate__fadeInDown{
     --animate-duration:6s;
+}
+
+.stopRest{
+     position: fixed;
+     bottom: 2vh;
+     right: 2vh;
+     width:10vw;
+     height:5vw;
+     font-size:1.3em;
+
 }

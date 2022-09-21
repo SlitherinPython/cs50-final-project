@@ -24,3 +24,7 @@ body{
   padding-top:1vh;
   padding-left:1vw;
 }
+
+.inline{
+  display:inline;
+}

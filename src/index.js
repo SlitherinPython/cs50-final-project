@@ -21,7 +21,7 @@ const menuItems = [
 ];
 
 function editSetting(event, setting, value){
-	const file_name = "src/config.json"
+	const file_name = "assets/config.json"
 	var file_content = fs.readFileSync(file_name);
 	var content = JSON.parse(file_content);
 	
@@ -64,7 +64,7 @@ if (require('electron-squirrel-startup')) {
 }
 var mainWindow;
 function sendJson(){
-	const file_name = "src/config.json";
+	const file_name = "assets/config.json";
 	var file_content = fs.readFileSync(file_name);
 	var content = JSON.parse(file_content);
 	mainWindow.webContents.send('heres-json', content);

@@ -12,8 +12,9 @@ img{
 }
 .mainlogo{
   margin:0 !important;
+  margin-left:6vw !important;
   padding:0 !important;
-  width:20vw;
+  width:30vw;
 }
 .mainstart{
   margin:0 !important; 
@@ -35,6 +36,9 @@ img{
 }
 .spacing50{
   height: 5vh;
+}
+.spacing25{
+  height: 2.5vh;
 }
 .audioHidden{
   width:0;
@@ -72,4 +76,17 @@ html{
   width:20%;
   padding-top:0.3vh;
   padding-right:1vw;
+}
+
+.outerYellow{
+  width:80%;
+  height:15vh;
+  background:#fcd24f;
+  border-radius: 10px;
+}
+
+.desc{
+  font-size:3rem;
+  font-family: 'Ms Madi', cursive;
+  font-weight:bold;
 }
