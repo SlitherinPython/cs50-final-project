@@ -1,3 +1,38 @@
+var set_seconds;
+var set_minutes;
+window.electronAPI.onHeresJson((_event, content) => {
+	if (content.demoMode) {
+		set_seconds = 5;
+		set_minutes = 0;
+	} else {
+		set_minutes = content.timerDuration;
+		set_seconds = 0;
+	}
+
+	var p = new Time(set_minutes, set_seconds);
+	document.getElementById("timer-text").innerHTML = p.print_time();
+	function minus_one_sec_in_timer() {
+		var minus_result = p.minus_one();
+		var result = p.print_time();
+		var timer_text = document.getElementById("timer-text");
+		timer_text.innerHTML = result;
+		if (minus_result == "X") {
+			document.getElementById("outer").remove();
+			var tag = document.createElement("div");
+			var element = document.getElementById("body");
+			tag.classList.add("takeup");
+			tag.classList.add("animate__animated");
+			tag.classList.add("animate__fadeInDown");
+			element.appendChild(tag);
+			audio2.play();
+			setTimeout(() => {
+				window.location.href = "music.html";
+			}, 5000);
+		}
+	}
+	setInterval(minus_one_sec_in_timer, 1000);
+});
+
 var audio = new Audio("../assets/timerbacktostartmenu.mp3");
 var audio2 = new Audio("../assets/timertomusic.mp3");
 class Time {
@@ -40,9 +75,8 @@ function redirect() {
 	window.location.href = "startMenu.html";
 }
 function stopbutton() {
-    
 	clearInterval();
-    audio.play();
+	audio.play();
 	document.getElementById("outer").remove();
 	var tag = document.createElement("div");
 	var element = document.getElementById("body");
@@ -55,27 +89,29 @@ function sleep(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-var p = new Time(0, 1);
+window.electronAPI.sendMeJson();
+// var p = new Time(set_minutes, set_seconds);
+// console.log(`${set_minutes}:${set_seconds}=${p.print_time()}`);
+// document.getElementById("timer-text").innerHTML = p.print_time();
+// function minus_one_sec_in_timer() {
+// 	var minus_result = p.minus_one();
+// 	var result = p.print_time();
+// 	var timer_text = document.getElementById("timer-text");
+// 	timer_text.innerHTML = result;
 
-document.getElementById("timer-text").innerHTML = p.print_time();
-function minus_one_sec_in_timer() {
-	var minus_result = p.minus_one();
-	var result = p.print_time();
-	var timer_text = document.getElementById("timer-text");
-	timer_text.innerHTML = result;
+// 	if (minus_result == "X") {
+// 		document.getElementById("outer").remove();
+// 		var tag = document.createElement("div");
+// 		var element = document.getElementById("body");
+// 		tag.classList.add("takeup");
+// 		tag.classList.add("animate__animated");
+// 		tag.classList.add("animate__fadeInDown");
 
-	if (minus_result == "X") {
-		document.getElementById("outer").remove();
-		var tag = document.createElement("div");
-		var element = document.getElementById("body");
-		tag.classList.add("takeup");
-		tag.classList.add("animate__animated");
-		tag.classList.add("animate__fadeInDown");
-		
-		element.appendChild(tag);
-		audio2.play()
-		setTimeout(() => {window.location.href = "music.html";}, 5000);
-		
-	}
-}
-setInterval(minus_one_sec_in_timer, 1000);
+// 		element.appendChild(tag);
+// 		audio2.play();
+// 		setTimeout(() => {
+// 			window.location.href = "music.html";
+// 		}, 5000);
+// 	}
+// }
+// setInterval(minus_one_sec_in_timer, 1000);

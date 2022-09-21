@@ -4,7 +4,6 @@ function redirect(){
     window.location.href = "timer.html";
 }
 function playStartSound() {
-    console.log("test");
 	audio.play();
     document.getElementById("outer").remove();
     document.getElementById("navbar").remove();

@@ -14,9 +14,9 @@ npm install eslint
 **To Run:** <br>
 `npm start`
 
+Thoughts before I started building the app: 
 
-
-Making a desktop programme that could operate on several operating systems is my aim for this project. I was really motivated to create a programme that would help computer users with a particular issue. After wasting hours looking for inspiration online, I came to understand the true issue that many of us confront. Control. After a long programming session, we frequently look up at a clock and realise that we just spent our entire afternoon fixing this bug. Time easily passes while we stare lifelessly at a screen of pixels. I set out to come up with solutions with the intention of solving this issue. How could I create a kind of alert to remind the user to take a break after a certain amount of time while still making it delightful and interesting for them? My initial thinking was to use the knowledge I gained from CS50 to do this. Simply said, I could create a website that visitors could access. But I felt it was a little too easy and not difficult enough.
+Making a desktop programme that could operate on several operating systems is my aim for this project. I am really motivated to create a programme that would help computer users with a particular issue. After wasting hours looking for inspiration online, I came to understand the true issue that many of us confront. Control. After a long programming session, we always look up at a clock and realise that we just spent our entire afternoon fixing this bug. Time easily passes while we stare lifelessly at a screen of pixels. I set out to come up with a solution with the intention of solving this issue. How could I create a kind of alert to remind the user to take a break after a certain amount of time while still making it delightful and interesting for them so that they would oblige? My initial thinking was to use the knowledge I gained from CS50 to do this. Simply said, I could create a website that visitors could access. But I felt it was a little too easy and not difficult enough.
 
 I then examined desktop programmes. Spotify, Vscode, and Discord. I use all these apps every day without thinking about them. How can I create these? I was clueless. I began to conduct some research online and learned they were typically built with C++ or C#. I searched the internet for further information because I didn't feel like learning entirely new languages just for CS50's final assignment. And it was at that point when I discovered Electron. It stated that I could develop desktop programmes using html, CSS, and javascript. Woah! I got to work right away.
 
@@ -31,7 +31,7 @@ I then examined desktop programmes. Spotify, Vscode, and Discord. I use all thes
 I looked through youtube and electron's documentation to slowly learn about the way that electron was used. I didn't really spend a long time learning it though. As soon as I got my first application running, I began to work on my idea.
 
 
-**Day 2:**
+**Day 2 (App development starts here):**
 
 *Figuring out how I could play audio in Electron* <br>
 I wanted my app to feature a timer that would change screens and start playing music when it rang, allowing the user to stretch and look out the window to rest their eyes.
@@ -75,14 +75,22 @@ I added transitions using the past methods and a new css library. Audio in betwe
 
 **Day 6:**
 
-*Added audio between timer/music transitions*
+*Added audio between timer/music transitions* <br>
 I looked for a few suitable sound effects online and added the appropriate delays for the music to play properly between transitions.
 
 **Day 7:**
 
-*I added a settings page*
+*I added a settings page* <br>
 I created a settings logo in the start menu early on in the project and I finally got to working on it. I used a bootstrap and some simple html.
 
-*Added settings functionality (doesn't include using the settings chosen by user yet)* 
+*Added settings functionality (doesn't include using the settings chosen by user yet)* <br>
 I used a json file to store the user preferences and linked the renderer file to the main process (which basically means I get to access the file system and therefore allow me to edit config.json with just javascript). Now, I can get the json file in the renderer process and edit the json file in the renderer process. This'll allow me to render the user's previous settings and implement their new settings when they save their changes. 
+
+**Day 8:** 
+
+*Implemented the users settings* <br>
+I finally linked everything together by using the settings chosen by the user with the actual applications. I had a problem with asynchronicity that I resolved after a fair bit of looking at stackoverflow. I had one global variable that wouldn't change because the function that changed it was an async function (default in javascript I think) so I used the fix provided.
+
+Post app development thoughts: 
+I really had fun developing this program. Although I faced loads of issues, I feel a great sense of accomplishment that I managed to learn and adapt to a new framework on my own without any assistance. I could read the documentation independently and have definitely learnt a lot from this experience. I would like to say thank you to all the cs50 staff and especially David (for being such a great lecturer), curiouskiwi (for helping me so much in my previous assignments), and the whole discord community for being such a welcoming place.
 
