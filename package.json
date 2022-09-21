@@ -1,8 +1,8 @@
 {
 	"name": "cs50-final-project",
-	"productName": "cs50-final-project",
+	"productName": "Chill",
 	"version": "1.0.0",
-	"description": "My Electron application description",
+	"description": "An app that asks you to take a break at customizable intervals.",
 	"main": "src/index.js",
 	"scripts": {
 		"start": "electron-forge start",
