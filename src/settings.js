@@ -44,4 +44,3 @@ demoMode.addEventListener("click", switchDemoMode);
 timerDuration.addEventListener("input", updateTimerDuration);
 restDuration.addEventListener("input", updateRestDuration);
 window.electronAPI.sendMeJson();
-// window.electronAPI.editSetting("demoMode", false);

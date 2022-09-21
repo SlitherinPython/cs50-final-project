@@ -3,7 +3,7 @@
 #### Video Demo: IN PROGRESS
 <br> <br>
 
-#### Description: A desktop application made for windows, macOS, and Linux (electron) that reminds users to take a break from staring at their PC screens after a certain amount of time.
+#### Description: A desktop application made for windows, macOS, and Linux (electron). This app has a start menu, settings and the main functionality of the app is a cycle. Once you press start, it'll start a timer (asking you to start working), and after the timer rings, it'll start another timer (asking you to take a break). When that timer runs out, you are led back to the first timer, making this a loop. 
 
 Installation instructions: <br>
 ```
@@ -20,6 +20,7 @@ Making a desktop programme that could operate on several operating systems is my
 
 I then examined desktop programmes. Spotify, Vscode, and Discord. I use all these apps every day without thinking about them. How can I create these? I was clueless. I began to conduct some research online and learned they were typically built with C++ or C#. I searched the internet for further information because I didn't feel like learning entirely new languages just for CS50's final assignment. And it was at that point when I discovered Electron. It stated that I could develop desktop programmes using html, CSS, and javascript. Woah! I got to work right away.
 
+
   
 <br>
 
@@ -28,7 +29,7 @@ I then examined desktop programmes. Spotify, Vscode, and Discord. I use all thes
 <hr>
 
 *Day 1: Learning Electron* <br>
-I looked through youtube and electron's documentation to slowly learn about the way that electron was used. I didn't really spend a long time learning it though. As soon as I got my first application running, I began to work on my idea.
+I looked through youtube and electron's documentation to slowly learn about the way that electron was used. I didn't really spend a long time learning it though. As soon as I got my first test application running, I began to work on my idea.
 
 
 **Day 2 (App development starts here):**

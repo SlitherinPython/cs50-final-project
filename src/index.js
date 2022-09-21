@@ -3,22 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 var mainWindow;
-const menuItems = [
-	{
-		label: "Window",
-		submenu: [
-			{
-				label: "Start music",
-				click: playMusicFuncInMain},
-      {
-        label: "Stop music",
-        click: stopMusicFuncInMain
-      },
-      {role: "toggleDevTools"},
-	  {role: "reload"}
-    ]
-	},
-];
+const menuItems = [];
 
 function editSetting(event, setting, value){
 	const file_name = __dirname + "/../extraResources/" + "config.json";

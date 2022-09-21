@@ -90,28 +90,3 @@ function sleep(ms) {
 }
 
 window.electronAPI.sendMeJson();
-// var p = new Time(set_minutes, set_seconds);
-// console.log(`${set_minutes}:${set_seconds}=${p.print_time()}`);
-// document.getElementById("timer-text").innerHTML = p.print_time();
-// function minus_one_sec_in_timer() {
-// 	var minus_result = p.minus_one();
-// 	var result = p.print_time();
-// 	var timer_text = document.getElementById("timer-text");
-// 	timer_text.innerHTML = result;
-
-// 	if (minus_result == "X") {
-// 		document.getElementById("outer").remove();
-// 		var tag = document.createElement("div");
-// 		var element = document.getElementById("body");
-// 		tag.classList.add("takeup");
-// 		tag.classList.add("animate__animated");
-// 		tag.classList.add("animate__fadeInDown");
-
-// 		element.appendChild(tag);
-// 		audio2.play();
-// 		setTimeout(() => {
-// 			window.location.href = "music.html";
-// 		}, 5000);
-// 	}
-// }
-// setInterval(minus_one_sec_in_timer, 1000);
