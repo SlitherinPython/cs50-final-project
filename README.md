@@ -98,7 +98,10 @@ I moved the positioning of the start menu items around and added an app descript
 *Added a stop button in the rest page* <br>
 Users couldn't stop resting if they didn't want to so I added a button to fix that. 
 
+**Day 9:**
 
+*Fixed background throttling* <br>
+After testing my app for the first time, I realized that the timer would slow down after I minimized my electron app due to background throttling. I implemented a audio hack which claimed to stop background throttling but didn't work. After editing a few webpreferences after looking at the suggestions of an article, the app seemed to work fine. 
 
 Post app development thoughts: 
 I really had fun developing this program. Although I faced loads of issues, I feel a great sense of accomplishment that I managed to learn and adapt to a new framework on my own without any assistance. I could read the documentation independently and have definitely learnt a lot from this experience. I would like to say thank you to all the cs50 staff and especially David (for being such a great lecturer), curiouskiwi (for helping me so much in my previous assignments), and the whole discord community for being such a welcoming place.
