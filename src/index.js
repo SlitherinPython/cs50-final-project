@@ -1,7 +1,7 @@
 const { app, BrowserWindow, Menu, ipcMain} = require('electron');
 const path = require('path');
 const fs = require('fs');
-
+app.commandLine.appendSwitch("disable-renderer-backgrounding");
 var mainWindow;
 const menuItems = [];
 
@@ -60,17 +60,33 @@ const createWindow = () => {
 	ipcMain.on('stop-music', stopMusicFuncInMain);
 	ipcMain.on('send-me-json', sendJson);
 	mainWindow = new BrowserWindow({
-	  width: 1920,
-	  height: 1080,
-	  show: false,
-	  webPreferences: {
-	    preload: path.join(__dirname, 'preload.js'),
-	  },
+		width: 1920,
+		height: 1080,
+		show: false,
+		webPreferences: {
+			preload: path.join(__dirname, "preload.js"),
+			"page-visibility": true,
+			backgroundThrottling: false
+		},
 	});
 	mainWindow.on("closed", () => {
 		soundcloudWindow.close();
 	});
-
+	// mainWindow.webContents.executeJavaScript(
+	// 	`(function(){
+    //         // Start a silent audio source in the web page
+    //         // to prevent it from being throttled in the background 
+    //         // by an overzealous Chromium.
+    //         // Reference: https://github.com/atom/atom/pull/9485/files
+    //         var context = new AudioContext();
+    //         var source = context.createBufferSource();
+    //         source.connect(context.destination);
+    //         source.start(0);
+    //     })()`,
+	// 	function () {
+	// 		console.log("apply audio hack");
+	// 	}
+	// );
 	mainWindow.loadFile(path.join(__dirname, 'startMenu.html'));
 	mainWindow.maximize();
 	mainWindow.show();
