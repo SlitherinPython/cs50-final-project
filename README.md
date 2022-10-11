@@ -1,9 +1,9 @@
 # 🧊 Chill 🧊
 
-#### Video Demo: IN PROGRESS
+#### Video Demo: [View on Youtube](https://www.youtube.com/watch?v=zvEdpU00uFg)
 <br> <br>
 
-#### Description: A desktop application made for windows, macOS, and Linux (electron). This app has a start menu, settings and the main functionality of the app is a cycle. Once you press start, it'll start a timer (asking you to start working), and after the timer rings, it'll start another timer (asking you to take a break). When that timer runs out, you are led back to the first timer, making this a loop. 
+#### Description: A desktop application made for windows, macOS, and Linux (electron). This app has a start menu, settings and the main functionality of the app is a cycle. Once you press start, it'll start a timer (asking you to start working), and after the timer rings, it'll start another timer (asking you to take a break). When that timer runs out, you are led back to the first timer, making this a loop. (Setup file available on github)
 
 Installation instructions: <br>
 ```
